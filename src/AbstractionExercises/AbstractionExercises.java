@@ -24,6 +24,26 @@ public class AbstractionExercises {
         // 10. Crea una interfaz Payable con el método pay(). Luego implementa las clases Invoice y EmployeePayment, cada una mostrando un mensaje de pago diferente.
     }
 
+    public interface Playable{
+        void play();
+    }
+
+    static class Guitar implements Playable{
+
+        @Override
+        public void play(){
+            System.out.println("Suena la guitarra.");
+        }
+    }
+
+    static class Piano implements Playable{
+        @Override
+        public void play(){
+            System.out.println("Suena el piano.");
+        }
+    }
+
+
     static abstract class Shape{
         abstract double calculateArea();
     }
