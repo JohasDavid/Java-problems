@@ -1,5 +1,7 @@
 package AbstractionExercises;
 
+import java.util.ArrayList;
+
 public class AbstractionExercises {
     public static void main(String[] args) {
 
@@ -8,6 +10,17 @@ public class AbstractionExercises {
         // 2. Crea una interfaz Playable con el método play(). Luego implementa esa interfaz en dos clases: Guitar y Piano. Cada una debe mostrar un mensaje diferente al ejecutarse.
 
         // 3. Define una clase abstracta Animal con el método makeSound(). Implementa Dog y Cat para que hagan sonidos distintos. Crea un array de Animal para mostrar polimorfismo.
+
+        System.out.println("Problema 3");
+        Animal[] animales = new Animal[3];
+        animales[0] = new Dog();
+        animales[1] = new Cat();
+        animales[2] = new Dog();
+
+        for(Animal a: animales){
+            a.makeSound();
+        }
+
 
         // 4. Crea una interfaz Drawable. Implementa las clases Circle, Square, y Triangle que muestren cómo se dibuja cada figura usando draw().
 
@@ -22,6 +35,23 @@ public class AbstractionExercises {
         // 9. Crea una clase abstracta Document con el método print(). Luego crea PDFDocument y WordDocument, cada una con su forma de imprimir.
 
         // 10. Crea una interfaz Payable con el método pay(). Luego implementa las clases Invoice y EmployeePayment, cada una mostrando un mensaje de pago diferente.
+    }
+
+
+    static abstract class Animal{
+        abstract void makeSound();
+    }
+
+    static class Dog extends Animal{
+        void makeSound(){
+            System.out.println("guau");
+        }
+    }
+
+    static class Cat extends Animal{
+        void makeSound(){
+            System.out.println("miau");
+        }
     }
 
     public interface Playable{
