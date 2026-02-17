@@ -42,6 +42,25 @@ public class AbstractionExercises {
         // 10. Crea una interfaz Payable con el método pay(). Luego implementa las clases Invoice y EmployeePayment, cada una mostrando un mensaje de pago diferente.
     }
 
+    public interface Movable{
+        void move();
+    }
+
+    static class Car implements Movable{
+        private String model;
+        public void move(){
+            System.out.println("El auto se mueve.");
+        }
+    }
+
+    static class Robot implements Movable{
+        private String model;
+        public void move(){
+            System.out.println("El robot se mueve.");
+        }
+    }
+
+
     static abstract class Employee{
         abstract void calculateSalary();
     }
