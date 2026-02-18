@@ -42,6 +42,37 @@ public class AbstractionExercises {
         // 10. Crea una interfaz Payable con el método pay(). Luego implementa las clases Invoice y EmployeePayment, cada una mostrando un mensaje de pago diferente.
     }
 
+    static abstract class Appliance{
+        abstract void turnOn();
+        abstract void turnOff();
+    }
+
+    static class TV extends Appliance{
+
+        @Override
+        public void turnOn(){
+            System.out.println("TV encendida.");
+        }
+
+        @Override
+        public void turnOff(){
+            System.out.println("TV apagada.");
+        }
+    }
+
+    static class WashingMachine extends Appliance{
+
+        @Override
+        public void turnOn(){
+            System.out.println("WM encendida.");
+        }
+
+        @Override
+        public void turnOff(){
+            System.out.println("WM apagada.");
+        }
+    }
+
     public interface Movable{
         void move();
     }
