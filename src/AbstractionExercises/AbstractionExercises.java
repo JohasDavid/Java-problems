@@ -42,6 +42,23 @@ public class AbstractionExercises {
         // 10. Crea una interfaz Payable con el método pay(). Luego implementa las clases Invoice y EmployeePayment, cada una mostrando un mensaje de pago diferente.
     }
 
+    public interface Flyable{
+        void fly();
+    }
+
+    public interface Swimmable{
+        void swim();
+    }
+
+    static class Duck implements Flyable, Swimmable{
+        public void fly(){
+            System.out.println("Fly like a Duck.");
+        }
+        public void swim(){
+            System.out.println("Swim like a Duck.");
+        }
+    }
+
     static abstract class Appliance{
         abstract void turnOn();
         abstract void turnOff();
