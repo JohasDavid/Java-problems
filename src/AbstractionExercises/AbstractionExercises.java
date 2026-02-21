@@ -42,6 +42,23 @@ public class AbstractionExercises {
         // 10. Crea una interfaz Payable con el método pay(). Luego implementa las clases Invoice y EmployeePayment, cada una mostrando un mensaje de pago diferente.
     }
 
+    static abstract class Document{
+        abstract void print();
+    }
+
+    static class PDFDocument extends Document{
+        public void print(){
+            System.out.println("Prints a PDF document.");
+        }
+    }
+
+    static class WordDocument{
+        public void print(){
+            System.out.println("Prints a Wprd document.");
+        }
+    }
+
+
     public interface Flyable{
         void fly();
     }
