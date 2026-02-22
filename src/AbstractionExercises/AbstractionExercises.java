@@ -42,19 +42,40 @@ public class AbstractionExercises {
         // 10. Crea una interfaz Payable con el método pay(). Luego implementa las clases Invoice y EmployeePayment, cada una mostrando un mensaje de pago diferente.
     }
 
+    public interface Payable{
+        public void pay();
+    }
+
+    public class Invoice implements Payable{
+        @Override
+        public void pay(){
+            System.out.println("Pay invoice.");
+        }
+    }
+
+    public class EmployeePayment implements Payable{
+        @Override
+        public void pay(){
+            System.out.println("Pay an employee.");
+        }
+
+    }
+
     static abstract class Document{
         abstract void print();
     }
 
     static class PDFDocument extends Document{
+        @Override
         public void print(){
             System.out.println("Prints a PDF document.");
         }
     }
 
-    static class WordDocument{
+    static class WordDocument extends Document{
+        @Override
         public void print(){
-            System.out.println("Prints a Wprd document.");
+            System.out.println("Prints a Word document.");
         }
     }
 
@@ -68,9 +89,13 @@ public class AbstractionExercises {
     }
 
     static class Duck implements Flyable, Swimmable{
+
+        @Override
         public void fly(){
             System.out.println("Fly like a Duck.");
         }
+
+        @Override
         public void swim(){
             System.out.println("Swim like a Duck.");
         }
@@ -113,6 +138,8 @@ public class AbstractionExercises {
 
     static class Car implements Movable{
         private String model;
+
+        @Override
         public void move(){
             System.out.println("El auto se mueve.");
         }
@@ -120,6 +147,8 @@ public class AbstractionExercises {
 
     static class Robot implements Movable{
         private String model;
+
+        @Override
         public void move(){
             System.out.println("El robot se mueve.");
         }
@@ -209,12 +238,16 @@ public class AbstractionExercises {
     }
 
     static class Dog extends Animal{
+
+        @Override
         void makeSound(){
             System.out.println("guau");
         }
     }
 
     static class Cat extends Animal{
+
+        @Override
         void makeSound(){
             System.out.println("miau");
         }
