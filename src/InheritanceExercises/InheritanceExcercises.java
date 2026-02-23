@@ -27,6 +27,29 @@ public class InheritanceExcercises {
         // 10. Crea un ArrayList<Animal> que contenga instancias de Dog, Cat y Bird. Recorre la lista y llama a makeSound().
     }
 
+    public static class Person{
+        private String name;
+        private int age;
+        Person(String name, int age){
+            this.name = name;
+            this.age = age;
+        }
+    }
+
+    public static class Student extends Person{
+        private int grade;
+        Student(String name, int age, int grade){
+            super(name, age);
+            this.grade = grade;
+
+        }
+
+        public void study(){
+            System.out.println("Studing...");
+        }
+
+    }
+
     public static class Vehicle{
         public static void move(){
             System.out.println("Vehicule move");
