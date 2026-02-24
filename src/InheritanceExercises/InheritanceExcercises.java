@@ -11,6 +11,10 @@ public class InheritanceExcercises {
         // 2. Define una clase Person con los atributos name y age. Luego crea una clase Student que agregue el atributo grade y un método study().
 
         // 3. Crea una clase Animal con el método makeSound(). Haz que Dog diga “Woof” y Cat diga “Meow” sobrescribiendo ese método.
+        Dog d1 = new Dog();
+        Cat c1 = new Cat();
+        d1.makesound();
+        c1.makesound();
 
         // 4. La clase Employee tiene los atributos name y salary. Manager hereda de Employee y agrega el atributo department.
 
@@ -25,6 +29,26 @@ public class InheritanceExcercises {
         // 9. Crea una clase Vehicle y tres subclases: Car, Bike y Truck, cada una con un método describe() sobrescrito.
 
         // 10. Crea un ArrayList<Animal> que contenga instancias de Dog, Cat y Bird. Recorre la lista y llama a makeSound().
+    }
+
+    public static class Animal{
+        public void makesound(){};
+    }
+
+    public static class Dog extends Animal{
+
+        @Override
+        public void makesound(){
+            System.out.println("Woof");
+        }
+    }
+
+    public static class Cat extends Animal{
+
+        @Override
+        public void makesound(){
+            System.out.println("Meow");
+        }
     }
 
     public static class Person{
