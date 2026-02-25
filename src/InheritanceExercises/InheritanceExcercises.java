@@ -31,6 +31,24 @@ public class InheritanceExcercises {
         // 10. Crea un ArrayList<Animal> que contenga instancias de Dog, Cat y Bird. Recorre la lista y llama a makeSound().
     }
 
+    public static class Employee{
+        private String name;
+        private float salary;
+        Employee(String name, float salary){
+            this.name = name;
+            this.salary = salary;
+        }
+
+    }
+
+    public static class Manager extends Employee{
+        private String department;
+        Manager(String name, float salary, String department){
+            super(name, salary);
+            this.department = department;
+        }
+    }
+
     public static class Animal{
         public void makesound(){};
     }
