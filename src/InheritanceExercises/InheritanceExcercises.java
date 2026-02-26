@@ -19,6 +19,10 @@ public class InheritanceExcercises {
         // 4. La clase Employee tiene los atributos name y salary. Manager hereda de Employee y agrega el atributo department.
 
         // 5. Crea una clase abstracta Shape con un método calculateArea(). Luego implementa ese método en Circle y Rectangle.
+        Circle a = new Circle(10);
+        Rectangle b = new Rectangle(10, 20);
+        a.calculateArea();
+        b.calculateArea();
 
         // 6. Crea una clase Bird con el método fly(). Luego crea Eagle que sobrescriba fly() pero también llame al método original con super.fly().
 
@@ -29,6 +33,36 @@ public class InheritanceExcercises {
         // 9. Crea una clase Vehicle y tres subclases: Car, Bike y Truck, cada una con un método describe() sobrescrito.
 
         // 10. Crea un ArrayList<Animal> que contenga instancias de Dog, Cat y Bird. Recorre la lista y llama a makeSound().
+    }
+
+    public abstract static class Shape{
+        abstract void calculateArea();
+    }
+
+    public static class Circle extends Shape{
+        private double radius;
+        Circle(double r){
+            this.radius = r;
+        }
+        @Override
+        public void calculateArea(){
+            System.out.println("Area: ");
+            System.out.printf("%.2f\n", this.radius * this.radius * Math.PI);
+        }
+    }
+
+    public static class Rectangle extends Shape{
+        private double side1, side2;
+        Rectangle(double a, double b){
+            this.side2 = b;
+            this.side1 = a;
+        }
+        @Override
+        public void calculateArea(){
+            System.out.println("Area: ");
+            System.out.printf("%.2f\n", this.side1 * this.side2);
+
+        }
     }
 
     public static class Employee{
