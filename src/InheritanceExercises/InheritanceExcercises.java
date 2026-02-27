@@ -25,6 +25,12 @@ public class InheritanceExcercises {
         b.calculateArea();
 
         // 6. Crea una clase Bird con el método fly(). Luego crea Eagle que sobrescriba fly() pero también llame al método original con super.fly().
+        Bird bird = new Bird();
+        Eagle eagle = new Eagle();
+        bird.fly();
+        eagle.fly();
+        eagle.fly_super();
+
 
         // 7. Haz una clase Device con un constructor que imprima “Device created”. Luego crea Phone que herede de Device y en su constructor imprima “Phone ready”.
 
@@ -33,6 +39,22 @@ public class InheritanceExcercises {
         // 9. Crea una clase Vehicle y tres subclases: Car, Bike y Truck, cada una con un método describe() sobrescrito.
 
         // 10. Crea un ArrayList<Animal> que contenga instancias de Dog, Cat y Bird. Recorre la lista y llama a makeSound().
+    }
+
+    public static class Bird{
+        public void fly(){
+            System.out.println("Bird Fly");
+        }
+    }
+
+    public static class Eagle extends Bird{
+        @Override
+        public void fly(){
+            System.out.println("Eagle fly");
+        }
+        public void fly_super(){
+            super.fly();
+        }
     }
 
     public abstract static class Shape{
