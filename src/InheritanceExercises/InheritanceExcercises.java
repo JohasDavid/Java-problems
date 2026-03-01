@@ -39,6 +39,47 @@ public class InheritanceExcercises {
         // 10. Crea un ArrayList<Animal> que contenga instancias de Dog, Cat y Bird. Recorre la lista y llama a makeSound().
     }
 
+    public static class SavingAccount extends Account{
+        public SavingAccount(){
+            super();
+        }
+
+        public SavingAccount(double saldo){
+            super(saldo);
+        }
+
+        public void addInterest(double interest){
+            this.saldo = this.saldo * (1 + interest);
+        }
+    }
+
+    public static class Account{
+        protected double saldo;
+
+        Account(){
+            this.saldo = 0.0;
+        }
+
+        Account (double saldo){
+            if(saldo > 0) {
+                this.saldo = saldo;
+            }else{
+                this.saldo = 0.0;
+            }
+        }
+        public void deposit(double deposit){
+            if(deposit > 0) {
+                this.saldo += deposit;
+            }
+        }
+
+        public void withdraw(double withdraw){
+            if(withdraw <= this.saldo){
+                this.saldo -= withdraw;
+            }
+        }
+    }
+
     public static class Device{
         public Device(){
             System.out.println("Device created");
