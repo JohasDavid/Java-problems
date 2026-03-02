@@ -4,7 +4,7 @@ public class InheritanceExcercises {
     public static void main(String[] args) {
 
         // 1. Crea una clase Vehicle con un método move(). Luego crea una subclase Car que herede de Vehicle y agrega el método honk().
-        Car v1 = new Car();
+        Truck v1 = new Truck();
         v1.move();
         v1.honk();
 
@@ -37,6 +37,34 @@ public class InheritanceExcercises {
         // 9. Crea una clase Vehicle y tres subclases: Car, Bike y Truck, cada una con un método describe() sobrescrito.
 
         // 10. Crea un ArrayList<Animal> que contenga instancias de Dog, Cat y Bird. Recorre la lista y llama a makeSound().
+    }
+
+    static public class Vehicle9{
+        public void describe(){
+            System.out.println("A vehicle.");
+        }
+    }
+
+    static public class Car9 extends Vehicle9{
+        @Override
+        public void describe(){
+            System.out.println("A car.");
+        }
+    }
+
+    static public class Bike9 extends Vehicle9{
+        @Override
+        public void describe(){
+            System.out.println("A bike.");
+        }
+
+    }
+
+    static public class Truck9 extends Vehicle9{
+        @Override
+        public void describe(){
+            System.out.println("A truck.");
+        }
     }
 
     public static class SavingAccount extends Account{
