@@ -1,10 +1,13 @@
 package InheritanceExercises;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class InheritanceExcercises {
     public static void main(String[] args) {
 
         // 1. Crea una clase Vehicle con un método move(). Luego crea una subclase Car que herede de Vehicle y agrega el método honk().
-        Truck v1 = new Truck();
+        Car v1 = new Car();
         v1.move();
         v1.honk();
 
@@ -37,6 +40,14 @@ public class InheritanceExcercises {
         // 9. Crea una clase Vehicle y tres subclases: Car, Bike y Truck, cada una con un método describe() sobrescrito.
 
         // 10. Crea un ArrayList<Animal> que contenga instancias de Dog, Cat y Bird. Recorre la lista y llama a makeSound().
+        List<Animal> list = new ArrayList<Animal>();
+        list.add(d1);
+        list.add(c1);
+        list.add(bird);
+
+        for( Animal animal : list){
+            animal.makesound();
+        }
     }
 
     static public class Vehicle9{
@@ -121,9 +132,12 @@ public class InheritanceExcercises {
         }
     }
 
-    public static class Bird{
+    public static class Bird extends Animal{
         public void fly(){
             System.out.println("Bird Fly");
+        }
+        public void makesound(){
+            System.out.println("Sonido de pajaro");
         }
     }
 
