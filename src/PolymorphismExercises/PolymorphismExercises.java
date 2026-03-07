@@ -27,7 +27,9 @@ public class PolymorphismExercises {
             s.calculateArea();
         }
         // 3. Crea una clase Printer con varios métodos print() sobrecargados que acepten diferentes tipos de parámetros (String, int, double). Llama a cada uno desde main.
-
+        Printer.print();
+        Printer.print(1);
+        Printer.print(2, "lalilulelo");
         // 4. Crea una clase Greeter con dos métodos greet(): uno que salude con “Hello”, y otro que reciba un nombre y salude con “Hello, [nombre]”.
 
         // 5. Crea una clase Vehicle con un método start(). Luego crea Car, Bike y Truck que sobrescriban ese método. Recorre una lista ArrayList<Vehicle> para llamar a start() en cada uno.
@@ -41,6 +43,19 @@ public class PolymorphismExercises {
         // 9. Crea una clase Product con el método getPrice(). Luego, Book y Electronic deben sobrescribirlo con su propia lógica de descuento. Recorre una lista de Product e imprime el precio final de cada uno.
 
         // 10. Crea una clase Character con método attack(). Luego crea subclases Warrior, Archer, Mage con ataques diferentes. En main, crea un array de Character y llama a attack() para cada uno.
+    }
+
+    public static class Printer{
+        public static void print(){
+            System.out.println("No argumentos.");
+        }
+        public static void print(int a){
+            System.out.println("Un argumento.");
+        }
+        public static void print(int b, String palabra){
+            System.out.println("Dos argumentos: " + palabra);
+        }
+
     }
 
     public static class Shape{
