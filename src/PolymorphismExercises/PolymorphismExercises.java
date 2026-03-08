@@ -45,6 +45,15 @@ public class PolymorphismExercises {
         // 10. Crea una clase Character con método attack(). Luego crea subclases Warrior, Archer, Mage con ataques diferentes. En main, crea un array de Character y llama a attack() para cada uno.
     }
 
+    public static class Greeter{
+        public static void greet(){
+            System.out.println("Hello");
+        }
+        public static void greet(String name){
+            System.out.println("Hello: " + name);
+        }
+    }
+
     public static class Printer{
         public static void print(){
             System.out.println("No argumentos.");
