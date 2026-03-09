@@ -33,6 +33,18 @@ public class PolymorphismExercises {
         // 4. Crea una clase Greeter con dos métodos greet(): uno que salude con “Hello”, y otro que reciba un nombre y salude con “Hello, [nombre]”.
 
         // 5. Crea una clase Vehicle con un método start(). Luego crea Car, Bike y Truck que sobrescriban ese método. Recorre una lista ArrayList<Vehicle> para llamar a start() en cada uno.
+        List<Vehicle> lista = new ArrayList<Vehicle>();
+        Vehicle bike = new Bike();
+        Vehicle car = new Car();
+        Vehicle truck = new Truck();
+
+        lista.add(bike);
+        lista.add(car);
+        lista.add(truck);
+
+        for(Vehicle vehicle: lista){
+            vehicle.start();
+        }
 
         // 6. Crea una clase Notification con método send(), y subclases EmailNotification, SMSNotification. Luego crea una función sendNotification(Notification n) que reciba cualquier tipo y lo ejecute.
 
@@ -43,6 +55,33 @@ public class PolymorphismExercises {
         // 9. Crea una clase Product con el método getPrice(). Luego, Book y Electronic deben sobrescribirlo con su propia lógica de descuento. Recorre una lista de Product e imprime el precio final de cada uno.
 
         // 10. Crea una clase Character con método attack(). Luego crea subclases Warrior, Archer, Mage con ataques diferentes. En main, crea un array de Character y llama a attack() para cada uno.
+    }
+
+    public static class Vehicle{
+        public void start(){
+            System.out.println("Vehicle start.");
+        }
+    }
+
+    public static class Car extends Vehicle{
+        @Override
+        public void start(){
+            System.out.println("Car start");
+        }
+    }
+
+    public static class Bike extends Vehicle{
+        @Override
+        public void start(){
+            System.out.println("Bike start");
+        }
+    }
+
+    public static class Truck extends Vehicle{
+        @Override
+        public void start(){
+            System.out.println("Truck start");
+        }
     }
 
     public static class Greeter{
