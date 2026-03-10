@@ -47,7 +47,8 @@ public class PolymorphismExercises {
         }
 
         // 6. Crea una clase Notification con método send(), y subclases EmailNotification, SMSNotification. Luego crea una función sendNotification(Notification n) que reciba cualquier tipo y lo ejecute.
-
+        EmailNotification n = new EmailNotification();
+        sendNotification(n);
         // 7. Crea una función showAnimalType(Animal animal) que imprima el tipo de animal. Pasa diferentes subclases (Dog, Cat, Horse) para que cada una imprima su tipo con su propio getType() sobrescrito.
 
         // 8. Crea una clase Converter con métodos convert(int), convert(double), y convert(String) que devuelvan diferentes formatos de texto.
@@ -55,6 +56,28 @@ public class PolymorphismExercises {
         // 9. Crea una clase Product con el método getPrice(). Luego, Book y Electronic deben sobrescribirlo con su propia lógica de descuento. Recorre una lista de Product e imprime el precio final de cada uno.
 
         // 10. Crea una clase Character con método attack(). Luego crea subclases Warrior, Archer, Mage con ataques diferentes. En main, crea un array de Character y llama a attack() para cada uno.
+    }
+
+    public static void sendNotification(Notification n){
+        n.send();
+    }
+
+    public static class Notification{
+        public void send(){
+            System.out.println("Send notification.");
+        }
+    }
+
+    public static class EmailNotification extends Notification{
+        public void send(){
+            System.out.println("Send email notification");
+        }
+    }
+
+    public static class SMSNotification extends Notification{
+        public void send(){
+            System.out.println("Sens SMS notification");
+        }
     }
 
     public static class Vehicle{
