@@ -50,12 +50,18 @@ public class PolymorphismExercises {
         EmailNotification n = new EmailNotification();
         sendNotification(n);
         // 7. Crea una función showAnimalType(Animal animal) que imprima el tipo de animal. Pasa diferentes subclases (Dog, Cat, Horse) para que cada una imprima su tipo con su propio getType() sobrescrito.
-
+        for(Animal animal : list){
+            animal.getType();
+        }
         // 8. Crea una clase Converter con métodos convert(int), convert(double), y convert(String) que devuelvan diferentes formatos de texto.
 
         // 9. Crea una clase Product con el método getPrice(). Luego, Book y Electronic deben sobrescribirlo con su propia lógica de descuento. Recorre una lista de Product e imprime el precio final de cada uno.
 
         // 10. Crea una clase Character con método attack(). Luego crea subclases Warrior, Archer, Mage con ataques diferentes. En main, crea un array de Character y llama a attack() para cada uno.
+    }
+
+    public static void showAnimalType(Animal animal){
+        animal.getType();
     }
 
     public static void sendNotification(Notification n){
@@ -161,8 +167,11 @@ public class PolymorphismExercises {
     }
 
     public static class Animal{
-        void makeSound(){
+        public void makeSound(){
             System.out.println("Sonido.");
+        }
+        public void getType(){
+            System.out.println("Animal");
         }
     }
 
@@ -171,6 +180,11 @@ public class PolymorphismExercises {
         public void makeSound(){
             System.out.println("woof");
         }
+
+        @Override
+        public void getType(){
+            System.out.println("Dog");
+        }
     }
 
     public static class Cat extends Animal{
@@ -178,12 +192,22 @@ public class PolymorphismExercises {
         public void makeSound(){
             System.out.println("meow");
         }
+
+        @Override
+        public void getType(){
+            System.out.println("Cat");
+        }
     }
 
     public static class Cow extends Animal{
         @Override
         public void makeSound(){
             System.out.println("muuuuu");
+        }
+
+        @Override
+        public void getType(){
+            System.out.println("Cow");
         }
     }
 }
