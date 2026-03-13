@@ -54,10 +54,26 @@ public class PolymorphismExercises {
             animal.getType();
         }
         // 8. Crea una clase Converter con métodos convert(int), convert(double), y convert(String) que devuelvan diferentes formatos de texto.
-
+        Converter.convert(5);
+        Converter.convert(4.5);
+        Converter.convert("Hola");
         // 9. Crea una clase Product con el método getPrice(). Luego, Book y Electronic deben sobrescribirlo con su propia lógica de descuento. Recorre una lista de Product e imprime el precio final de cada uno.
 
         // 10. Crea una clase Character con método attack(). Luego crea subclases Warrior, Archer, Mage con ataques diferentes. En main, crea un array de Character y llama a attack() para cada uno.
+    }
+
+    public static class Converter{
+        public static void convert(int a){
+            System.out.println("Integer: " + a);
+        }
+
+        public static void convert(double a){
+            System.out.println("Double: " + a);
+        }
+
+        public static void convert(String a){
+            System.out.println("String: " + a);
+        }
     }
 
     public static void showAnimalType(Animal animal){
