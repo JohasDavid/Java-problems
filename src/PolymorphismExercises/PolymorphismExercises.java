@@ -58,8 +58,86 @@ public class PolymorphismExercises {
         Converter.convert(4.5);
         Converter.convert("Hola");
         // 9. Crea una clase Product con el método getPrice(). Luego, Book y Electronic deben sobrescribirlo con su propia lógica de descuento. Recorre una lista de Product e imprime el precio final de cada uno.
-
+        List<Product> products = new ArrayList<>();
+        Book book = new Book(100);
+        Electronic electronic = new Electronic(100);
+        products.add(book);
+        products.add(electronic);
+        for( Product a : products){
+            System.out.println(a.getPrice());
+        }
         // 10. Crea una clase Character con método attack(). Luego crea subclases Warrior, Archer, Mage con ataques diferentes. En main, crea un array de Character y llama a attack() para cada uno.
+        List<Character> characters = new ArrayList<>();
+        Mage mage = new Mage();
+        Warrior warrior = new Warrior();
+        Archer archer = new Archer();
+
+        characters.add(mage);
+        characters.add(warrior);
+        characters.add(archer);
+
+        for(Character chars : characters){
+            chars.attack();
+        }
+
+    }
+
+    public static class Character{
+        public void attack(){
+            System.out.println("Character attacks");
+        }
+    }
+
+    public static class Warrior extends Character{
+        public void attack(){
+            System.out.println("Warrior attacks");
+        }
+    }
+
+    public static class Archer extends Character{
+        public void attack(){
+            System.out.println("Archer attacks");
+        }
+    }
+    public static class Mage extends Character{
+        public void attack(){
+            System.out.println("Mage attacks");
+        }
+    }
+
+
+    public static class Product{
+        private double price;
+        Product(double price){
+            this.price = price;
+        }
+        public double getPrice(){
+            return this.price;
+        }
+    }
+
+    public static class Book extends Product{
+        Book(double price){
+            super(price);
+        }
+
+        @Override
+        public double getPrice(){
+            return super.getPrice() * (0.85);
+        }
+
+    }
+
+    public static class Electronic extends Product{
+        Electronic(double price){
+            super(price);
+        }
+
+        @Override
+        public double getPrice(){
+            return super.getPrice() * (0.90);
+        }
+
     }
 
     public static class Converter{
