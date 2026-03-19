@@ -1,5 +1,8 @@
 package ExceptionExercises;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ExeptionExercises {
 
     public static void main(String[] args) {
@@ -14,7 +17,16 @@ public class ExeptionExercises {
         division(a, c);
 
         // 2. Crea un array de 3 elementos e intenta acceder al índice 5. Captura el ArrayIndexOutOfBoundsException.
-
+        int[] lista = {0, 0, 0};
+        for(int i = 0; i < 3; i++){
+            lista[i] = i;
+        }
+        try{
+            int entero = lista[5];
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e.getMessage());
+        }
+        
         // 3. Crea una variable String nula e intenta imprimir su longitud. Maneja el NullPointerException.
 
         // 4. Escribe una función que transforma texto a número. Usa try-catch para manejar entradas no válidas (NumberFormatException).
