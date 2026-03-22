@@ -35,7 +35,12 @@ public class ExeptionExercises {
                 System.out.println(e.getMessage());
             }
         // 4. Escribe una función que transforma texto a número. Usa try-catch para manejar entradas no válidas (NumberFormatException).
-
+            try{
+                System.out.println(stringToNumber("2345"));
+                System.out.println(stringToNumber("lalilulelo"));
+            } catch (NumberFormatException e) {
+                System.out.println(e.getMessage());
+            }
         // 5. Escribe un programa con un bloque finally que se ejecute siempre, haya o no error.
 
         // 6. Usa throw para lanzar un IllegalArgumentException si un número introducido es negativo.
@@ -47,6 +52,10 @@ public class ExeptionExercises {
         // 9. Crea una función checkPassword(String pass) que lance una excepción si la contraseña es demasiado corta.
 
         // 10. Implementa una clase LoginSystem que use una excepción personalizada LoginFailedException si el usuario o contraseña son incorrectos.
+    }
+    public static int stringToNumber(String number) throws NumberFormatException{
+        int x = Integer.parseInt(number);
+        return x;
     }
 
     public static void division(int a, int b){
