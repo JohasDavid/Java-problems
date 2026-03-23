@@ -42,7 +42,11 @@ public class ExeptionExercises {
                 System.out.println(e.getMessage());
             }
         // 5. Escribe un programa con un bloque finally que se ejecute siempre, haya o no error.
-
+        try{
+            System.out.println("Bloque try.");
+        }finally{
+            System.out.println("Bloque finally.");
+        }
         // 6. Usa throw para lanzar un IllegalArgumentException si un número introducido es negativo.
 
         // 7. Crea una clase TemperatureChecker que lanza una excepción personalizada si la temperatura es menor a -50 o mayor a 50.
