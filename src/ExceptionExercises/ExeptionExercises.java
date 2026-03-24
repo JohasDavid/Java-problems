@@ -2,6 +2,7 @@ package ExceptionExercises;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ExeptionExercises {
 
@@ -48,7 +49,13 @@ public class ExeptionExercises {
             System.out.println("Bloque finally.");
         }
         // 6. Usa throw para lanzar un IllegalArgumentException si un número introducido es negativo.
-
+        System.out.println("Introduce un entero: ");
+        Scanner keyboard = new Scanner(System.in);
+        int entero = keyboard.nextInt();
+        if (entero < 0 ){
+            IllegalArgumentException exx = new IllegalArgumentException("Número negativo");
+            throw exx;
+        }
         // 7. Crea una clase TemperatureChecker que lanza una excepción personalizada si la temperatura es menor a -50 o mayor a 50.
 
         // 8. Crea un programa con varios bloques catch: uno para ArithmeticException, otro para ArrayIndexOutOfBoundsException.
