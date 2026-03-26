@@ -64,6 +64,24 @@ public class ExeptionExercises {
 
         // 10. Implementa una clase LoginSystem que use una excepción personalizada LoginFailedException si el usuario o contraseña son incorrectos.
     }
+
+    public static class MyException extends Exception{
+        MyException(String message){
+            super(message);
+        }
+    }
+
+    public static class TemperatureChecker{
+        public float temp;
+        TemperatureChecker(float temp) throws MyException{
+            if (temp >= -50 && temp <= 50){
+                this.temp = temp;
+            }else{
+                MyException my_exception = new MyException("Excepcion personalizada");
+                throw my_exception;
+            }
+        }
+    }
     public static int stringToNumber(String number) throws NumberFormatException{
         int x = Integer.parseInt(number);
         return x;
