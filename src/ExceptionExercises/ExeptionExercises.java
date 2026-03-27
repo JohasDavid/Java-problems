@@ -72,6 +72,12 @@ public class ExeptionExercises {
 
         // 10. Implementa una clase LoginSystem que use una excepción personalizada LoginFailedException si el usuario o contraseña son incorrectos.
     }
+    public static void checkPassword(String pass){
+        int minLen = 10;
+        if ( pass.length() < minLen ){
+            throw new IllegalArgumentException("La contraseña es demasiado corta.");
+        }
+    }
 
     public static class MyException extends Exception{
         MyException(String message){
