@@ -59,7 +59,15 @@ public class ExeptionExercises {
         // 7. Crea una clase TemperatureChecker que lanza una excepción personalizada si la temperatura es menor a -50 o mayor a 50.
 
         // 8. Crea un programa con varios bloques catch: uno para ArithmeticException, otro para ArrayIndexOutOfBoundsException.
-
+        try{
+            int g = 10;
+            int f = 5;
+            int l = g / f;
+        }catch(ArithmeticException e){
+            System.out.println(e.getMessage());
+        }catch(ArrayIndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+        }
         // 9. Crea una función checkPassword(String pass) que lance una excepción si la contraseña es demasiado corta.
 
         // 10. Implementa una clase LoginSystem que use una excepción personalizada LoginFailedException si el usuario o contraseña son incorrectos.
