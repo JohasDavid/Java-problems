@@ -72,6 +72,22 @@ public class ExeptionExercises {
 
         // 10. Implementa una clase LoginSystem que use una excepción personalizada LoginFailedException si el usuario o contraseña son incorrectos.
     }
+    public static class LoginFailedException extends Exception{
+        LoginFailedException(){
+            super("Incorrect User or Password ");
+        }
+    }
+    public static class LoginSystem{
+        private final String userName = "Johas";
+        private final String password = "lalilulelo";
+
+        LoginSystem (String uN, String pw) throws LoginFailedException{
+            if (uN.equals(this.userName) |  pw.equals(this.password)){
+                LoginFailedException e = new LoginFailedException();
+                throw  e;
+            }
+        }
+    }
     public static void checkPassword(String pass){
         int minLen = 10;
         if ( pass.length() < minLen ){
